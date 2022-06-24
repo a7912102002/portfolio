@@ -565,8 +565,8 @@ body.scroll {
     transition: opacity 240ms linear;
 }
 .mobile .author_img{
-    animation-duration: 2.5s;
-    transition: opacity 100ms linear;
+    animation-duration: 3s;
+    transition: opacity 150ms linear;
 }
 @keyframes author_img_ {
     0% { clip-path: polygon( 25% 0%, 75%   0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
