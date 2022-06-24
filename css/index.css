@@ -554,9 +554,17 @@ body.scroll {
     background-position: center;
     position: relative;
     animation-name: author_img;
-    animation-duration: 8s;
+    /* animation-duration: 8s; */
     animation-iteration-count: infinite;
+    /* transition: opacity 240ms linear; */
+}
+.pc .author_img{
+    animation-duration: 8s;
     transition: opacity 240ms linear;
+}
+.mobile .author_img{
+    animation-duration: 4s;
+    transition: opacity 180ms linear;
 }
 @keyframes author_img_ {
     0% { clip-path: polygon( 25% 0%, 75%   0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
