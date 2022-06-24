@@ -480,6 +480,7 @@ body.page_work_content .bg_left{
 .work_cont_txt{
     margin-top: 200px;
     margin-bottom: 160px;
+    padding: 0  10.5vw;
 }
 .work_cont_txt .container{
     max-width: 900px;
