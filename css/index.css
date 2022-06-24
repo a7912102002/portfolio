@@ -359,6 +359,7 @@ body.scroll {
     background-color: #888;
     display: block;
     transform: rotate(45deg);
+    margin: 0 auto;
 }
 .about_content_close span{
     transform: rotate(-45deg);
@@ -366,6 +367,7 @@ body.scroll {
     height: 2px;
     position: relative;
     display: block;
+    margin: 0 auto;
 }
 .about_content_close span:before{
     content: '';

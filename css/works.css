@@ -450,6 +450,7 @@ body.page_work_content .bg_left{
     background-color: #888;
     display: block;
     transform: rotate(45deg);
+    margin: 0 auto;
 }
 .work_content_close span{
     transform: rotate(-45deg);
@@ -457,6 +458,7 @@ body.page_work_content .bg_left{
     height: 2px;
     position: relative;
     display: block;
+    margin: 0 auto;
 }
 .work_content_close span:before{
     content: '';
