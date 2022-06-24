@@ -433,6 +433,7 @@ body.page_work_content .bg_left{
     top: 0;
     right: 0;
     z-index: 999;
+    padding: 0;
 }
 .work_content .content_in,
 .work_content_close{
