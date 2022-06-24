@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?5a8xvs');
+  src:  url('fonts/icomoon.eot?5a8xvs#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5a8xvs') format('truetype'),
+    url('fonts/icomoon.woff?5a8xvs') format('woff'),
+    url('fonts/icomoon.svg?5a8xvs#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-shopplus2:before {
+  content: "\e906";
+}
+.ic-shopplus:before {
+  content: "\e905";
+}
+.ic-arrow:before {
+  content: "\e904";
+  color: #b3b3b3;
+}
+.ic-plusmore:before {
+  content: "\e901";
+  color: #aaa9a9;
+}
+.ic-bonus:before {
+  content: "\e900";
+}
+.ic-trash:before {
+  content: "\e902";
+  color: #878888;
+}
+.ic-voucher:before {
+  content: "\e903";
+}
