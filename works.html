@@ -645,13 +645,19 @@
 	<script type="text/javascript">
 		// $('.loading_progress').animate({'width':'100%'},50);
 
-		// var time = 0
+		var time = 0
 		function draw(){
-			// time++
 			if($('.work_list').hasClass('active')){
 				$('.loading_progress').animate({'width':'100%'},50);
 				$('.loading').fadeOut();
 				return false;
+			}else{
+				if($('.loading_progress').css('width') == (360*0.8)+'px'){
+					time++
+				}
+				if(time == 10){
+					window.location.reload();
+				}
 			}
 			// if($('.loading_progress').css('width')=='360px'){
 			// 	$('.loading').fadeOut();
