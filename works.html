@@ -290,8 +290,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js"></script>
 	<!-- <script src="scripts/parallax.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<!-- <script src="scripts/lottie.min.js"></script> -->
-	<script src="https://unpkg.com/lottie-web@5.8.1/build/player/lottie.js"></script>
+	<script src="scripts/lottie.min.js"></script>
+	<!-- <script src="https://unpkg.com/lottie-web@5.8.1/build/player/lottie.js"></script> -->
 	<!-- <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 	<script src="scripts/jquery.mousewheel.min.js"></script>
@@ -304,18 +304,18 @@
 		var winsize = {width:'1920', height:'1080'}
 		var bg = document.querySelector('.bg')
 		var jsbg = document.querySelector('.jsbg')
-		// var animate = lottie.loadAnimation({
-		// 	container: jsbg, // the dom element that will contain the animation
-		// 	renderer: 'svg',
-		// 	loop: true,
-		// 	autoplay: true,
-		// 	path: 'images/bg2.json', // the path to the animation json
-		// 	rendererSettings : { 
-		// 		preserveAspectRatio : 'xMidYMid meet',
-		// 		className : 'some-css-class-name',
-		// 	} 
-		// });
-		// animate.setSpeed(0.5);
+		var animate = lottie.loadAnimation({
+			container: jsbg, // the dom element that will contain the animation
+			renderer: 'svg',
+			loop: true,
+			autoplay: true,
+			path: 'images/bg2.json', // the path to the animation json
+			rendererSettings : { 
+				preserveAspectRatio : 'xMidYMid meet',
+				className : 'some-css-class-name',
+			} 
+		});
+		animate.setSpeed(0.5);
 
 		var svgRendered
 		function resize(){
@@ -325,14 +325,14 @@
 			bg.getAttributeNode('height').value = winsize.height
 			jsbg.getAttributeNode('width').value = winsize.width
 			jsbg.getAttributeNode('height').value = winsize.height
-			// svgRendered = document.querySelector('.some-css-class-name')
-			// if(window.innerHeight > window.innerWidth){
-			// 	svgRendered.style.width='auto'
-			// 	svgRendered.style.height='100vh'
-			// }else{
-			// 	svgRendered.style.width='100vw'
-			// 	svgRendered.style.height='auto'
-			// }
+			svgRendered = document.querySelector('.some-css-class-name')
+			if(window.innerHeight > window.innerWidth){
+				svgRendered.style.width='auto'
+				svgRendered.style.height='100vh'
+			}else{
+				svgRendered.style.width='100vw'
+				svgRendered.style.height='auto'
+			}
 			
 			var cursor = document.getElementById('cursor')
 			if(winsize.width>1440){
