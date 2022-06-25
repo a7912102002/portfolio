@@ -643,15 +643,20 @@
 
 	<!--進度條-->
 	<script type="text/javascript">
-		$('.loading_progress').animate({'width':'100%'},50);
+		// $('.loading_progress').animate({'width':'100%'},50);
 
-		var time = 0
+		// var time = 0
 		function draw(){
-			time++
-			if($('.loading_progress').css('width')=='360px'){
+			// time++
+			if($('.work_list').hasClass('active')){
+				$('.loading_progress').animate({'width':'100%'},50);
 				$('.loading').fadeOut();
 				return false;
 			}
+			// if($('.loading_progress').css('width')=='360px'){
+			// 	$('.loading').fadeOut();
+			// 	return false;
+			// }
 			requestAnimationFrame(draw)
 		}
 		requestAnimationFrame(draw)
