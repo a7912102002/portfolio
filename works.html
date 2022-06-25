@@ -359,6 +359,27 @@
 			}
 		}
 
+		var time = 0
+		function draw(){
+			if(!$('.work_content').hasClass('active')&&$('.work_ul').hasClass('owl-loaded')){
+				$('.work_list').addClass('active');
+			}
+			if($('.work_list').hasClass('active')){
+				$('.loading_progress').animate({'width':'100%'},50);
+				$('.loading').fadeOut();
+				return false;
+			}else{
+				if($('.loading_progress').css('width') == (360*0.8)+'px'){
+					time++
+				}
+				if(time == 30){
+					window.location.reload();
+				}
+			}
+			requestAnimationFrame(draw)
+		}
+		requestAnimationFrame(draw)
+
 		/*滑鼠移標*/
 		function oCursor(oDiv){
 			oDiv.style.display = 'block';
@@ -405,30 +426,6 @@
 			// 		$('.work_list').addClass('active');
 			// 	}
 			// }setInterval(loaded,30)
-
-
-			var time = 0
-			function draw(){
-				if(!$('.work_content').hasClass('active')&&$('.work_ul').hasClass('owl-loaded')){
-					$('.work_list').addClass('active');
-				}
-
-				if($('.work_list').hasClass('active')){
-					$('.loading_progress').animate({'width':'100%'},50);
-					$('.loading').fadeOut();
-					return false;
-				}else{
-					if($('.loading_progress').css('width') == (360*0.8)+'px'){
-						time++
-					}
-					if(time == 30){
-						window.location.reload();
-					}
-				}
-				requestAnimationFrame(draw)
-			}
-			requestAnimationFrame(draw)
-
 
 			owl.on('mousewheel', '.owl-stage', function (e) {
 				if (e.deltaY>0) {
