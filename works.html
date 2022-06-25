@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/works.css">
 	<title>HUANG TING YA 作品集</title>
-	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<!-- <script src="scripts/jquery-3.2.1.min.js"></script> -->
 </head>
 <body class="works-page">
 	<div class="loading flex flex-center" style="width: 100%; height: 1080px; align-items: center;">
@@ -283,7 +283,7 @@
 	$('.loading_progress').animate({'width':'80%'},50); 
 </script>
 
-	<!-- <script src="scripts/jquery-3.2.1.min.js"></script> -->
+	<script src="scripts/jquery-3.2.1.min.js"></script>
 	<!-- <script src="scripts/modernizr.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<!-- <script src="scripts/aos/aos.js"></script> -->
@@ -292,11 +292,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<!-- <script src="scripts/lottie.min.js"></script> -->
 	<script src="https://unpkg.com/lottie-web@5.8.1/build/player/lottie.js"></script>
-	<script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+	<!-- <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 	<script src="scripts/jquery.mousewheel.min.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/CSSPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenLite.min.js"></script>
 	<script>
 		// alert(window.innerWidth)
 		var winsize = {width:'1920', height:'1080'}
@@ -379,7 +381,7 @@
 			// }
 			requestAnimationFrame(draw)
 		}
-		requestAnimationFrame(draw)
+		// requestAnimationFrame(draw)
 
 		/*滑鼠移標*/
 		function oCursor(oDiv){
@@ -458,6 +460,7 @@
 			window.onresize = resize;
 		};
 		$(document).ready(function(){
+			requestAnimationFrame(draw)
 			$('.work_name_en').addClass('load')
 
 			var web_url = window.location.href;
@@ -690,8 +693,5 @@
 		requestAnimationFrame(draw)
 		*/
 	</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/CSSPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenLite.min.js"></script>
 </body>
 </html>
