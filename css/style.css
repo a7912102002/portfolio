@@ -22,7 +22,7 @@ img::-moz-selection {
   position: fixed;
   top: 0;
   left: 0;
-  /* background: #fff; */
+  background: #fff;
   z-index: 999;
 }
 .loading_progress{
