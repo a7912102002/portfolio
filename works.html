@@ -357,11 +357,15 @@
 					$('.work_list').addClass('active');
 				}
 			}
-
-			if($('body').hasClass('page_work_content')){
-				$('.work_cont_mobile').css({'height':599*$('.work_cont_mobile').outerWidth()/296})
-				parallax()
-			}
+			setTimeout(function(){
+				if($('body').hasClass('page_work_content')){
+					$('.work_cont_mobile').css({'height':599*$('.work_cont_mobile').outerWidth()/296})
+					if($('.content_in').children('div').children('div').hasClass('moviediv')){
+						$('.moviediv iframe').attr('height',$('.moviediv iframe').outerWidth()*(27/56)).css({'opacity':1});
+					}
+					parallax()
+				}
+			}, 800);
 		}
 
 		var time = 0
@@ -504,8 +508,8 @@
 					// $('#__lottie_element_6 stop').eq(0).attr('stop-color','rgb(226 209 195)');
 					// $('#__lottie_element_6 stop').eq(1).attr('stop-color','rgb(253 252 251)');
 
-					$('#__lottie_element_6 stop').eq(0).attr('stop-color','rgb(172 224 249)');
-					$('#__lottie_element_6 stop').eq(1).attr('stop-color','rgb(255 241 235)');
+					// $('#__lottie_element_6 stop').eq(0).attr('stop-color','rgb(172 224 249)');
+					// $('#__lottie_element_6 stop').eq(1).attr('stop-color','rgb(255 241 235)');
 
 						list_posX = $(this).offset().left;
 						// list_posY = $(this).offset().top;
@@ -538,8 +542,10 @@
 						$('.swiper-wrapper').html(swiper_li)
 					}else{
 						$('.work_cont_pc').remove()
-						$('.parallax').after('<div class="moviediv"><video id="movie-pc" title="Advertisement" style="background-color: rgb(0, 0, 0); width: 100%;" src="images/works/'+$(this).attr('tag')+'/pc.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video></div>')
-						$('.work_cont_img_phone').after('<video id="movie-phone" title="Advertisement" style="background-color: rgb(0, 0, 0); height: 100%;" src="images/works/'+$(this).attr('tag')+'/phone.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video>')
+						// $('.parallax').after('<div class="moviediv"><video id="movie-pc" title="" style="background-color: rgb(0, 0, 0); width: 100%;" src="images/works/'+$(this).attr('tag')+'/pc.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video></div>')
+						$('.parallax').after('<div class="moviediv"><iframe width="100%" height="0" style="opacity: 0" src="https://www.youtube.com/embed/99H4K2tlya0?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
+						$('.moviediv iframe').attr('height',$('.moviediv iframe').outerWidth()*(27/56)).css({'opacity':1});
+						$('.work_cont_img_phone').after('<video id="movie-phone" title="" style="background-color: rgb(0, 0, 0); height: 100%;" src="images/works/'+$(this).attr('tag')+'/phone.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video>')
 						$('.parallax,.work_cont_img_phone').remove()
 						// $('.parallax').css({'position':'absolute','opacity':0})
 						// setTimeout(function(){$('.parallax').remove();}, 900);
