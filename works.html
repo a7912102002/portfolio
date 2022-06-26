@@ -362,8 +362,8 @@
 					$('.work_cont_mobile').css({'height':599*$('.work_cont_mobile').outerWidth()/296})
 					if($('.content_in').children('div').children('div').hasClass('moviediv')){
 						$('.moviediv iframe').attr('height',$('.moviediv iframe').outerWidth()*(27/56)).css({'opacity':1});
+						$('.work_cont_mobile_in').css({'overflow':'visible'});
 					}
-					parallax()
 				}
 			}, 800);
 		}
@@ -452,13 +452,14 @@
 		//parallax
 		function parallax(){
 			offsetTop = $(window).scrollTop();
-
-			if( $('body').hasClass('pc') ){
-				var bgss = $(".parallax #pic-bg");
-				var this_b1= (offsetTop - bgss.offset().top)/10 ;
-				TweenLite.to(bgss, 1, { backgroundPosition: "50% "+ this_b1+"px" });
-			}else{
-				$(".parallax #pic-bg").css({'height':$('.fadein_pic').height()})
+			if($('.content_in').children('div').children('div').hasClass('parallax')){
+				if( $('body').hasClass('pc') ){
+					var bgss = $(".parallax #pic-bg");
+					var this_b1= (offsetTop - bgss.offset().top)/10 ;
+					TweenLite.to(bgss, 1, { backgroundPosition: "50% "+ this_b1+"px" });
+				}else{
+					$(".parallax #pic-bg").css({'height':$('.fadein_pic').height()})
+				}
 			}
 		}		
 
@@ -491,16 +492,17 @@
 				list_scroll = 0;
 			var work_cont_data = [
 				{'id':'01','name':'','work':``,'url':'#'},
-				{'id':'02','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://cxvamvc.tour-demo.com/'},
-				{'id':'03','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://zoostaymvc.tour-demo.com/'},
-				{'id':'04','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://joymvc.tour-demo.com/'},
-				{'id':'05','name':'Maido Ookini食堂','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'https://www.shokudo.com.tw/'},
-				{'id':'06','name':'里亞行旅','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'https://www.liyaou.com/?fbclid=IwAR3VSziNxw1r_T_oxL9fE_8K7RZVCvakACOfkHZiXWEeCedO_yk0RLm_8ww'},
-				{'id':'07','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://tourmvc.tour-demo.com/'},
-				{'id':'08','name':'暖暖陶瓷','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'https://www.hoka24hr.com/'},
-				{'id':'09','name':'米洛_產品介紹套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'#'},
-				{'id':'10','name':'米洛_購物流程套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'#'}
+				{'id':'02','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://cxvamvc.tour-demo.com/','moviepc':'','moviephone':''},
+				{'id':'03','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://zoostaymvc.tour-demo.com/','moviepc':'','moviephone':''},
+				{'id':'04','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://joymvc.tour-demo.com/','moviepc':'','moviephone':''},
+				{'id':'05','name':'Maido Ookini食堂','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'https://www.shokudo.com.tw/','moviepc':'','moviephone':''},
+				{'id':'06','name':'里亞行旅','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'https://www.liyaou.com/?fbclid=IwAR3VSziNxw1r_T_oxL9fE_8K7RZVCvakACOfkHZiXWEeCedO_yk0RLm_8ww','moviepc':'99H4K2tlya0','moviephone':'rC8sjZ8jmAQ'},
+				{'id':'07','name':'多米諾_套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'http://tourmvc.tour-demo.com/','moviepc':'','moviephone':''},
+				{'id':'08','name':'暖暖陶瓷','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'https://www.hoka24hr.com/','moviepc':'','moviephone':''},
+				{'id':'09','name':'米洛_產品介紹套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'#','moviepc':'EiPE_XqrOmM','moviephone':'Y7MD6OhVxds'},
+				{'id':'10','name':'米洛_購物流程套版','work':`UX 線框<br>UI 設計<br>FE 開發`,'url':'#','moviepc':'1fvYNInsYNY','moviephone':'y3cUAG1muiY'},
 			]
+			
 			$("a.work_a").click(function(){
 				let attr_tag = $(this).attr('tag')
 				if($(this).attr('target')!='_blank'){
@@ -543,9 +545,11 @@
 					}else{
 						$('.work_cont_pc').remove()
 						// $('.parallax').after('<div class="moviediv"><video id="movie-pc" title="" style="background-color: rgb(0, 0, 0); width: 100%;" src="images/works/'+$(this).attr('tag')+'/pc.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video></div>')
-						$('.parallax').after('<div class="moviediv"><iframe width="100%" height="0" style="opacity: 0" src="https://www.youtube.com/embed/99H4K2tlya0?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
+						$('.parallax').after('<div class="moviediv"><iframe width="100%" height="0" style="opacity: 0" src="https://www.youtube.com/embed/'+work_cont_data[attr_tag*1-1].moviepc+'?rel=0&loop=1&modestbranding=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
 						$('.moviediv iframe').attr('height',$('.moviediv iframe').outerWidth()*(27/56)).css({'opacity':1});
-						$('.work_cont_img_phone').after('<video id="movie-phone" title="" style="background-color: rgb(0, 0, 0); height: 100%;" src="images/works/'+$(this).attr('tag')+'/phone.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video>')
+						// $('.work_cont_img_phone').after('<video id="movie-phone" title="" style="background-color: rgb(0, 0, 0); height: 100%;" src="images/works/'+$(this).attr('tag')+'/phone.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video>')
+						$('.work_cont_mobile_in').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+work_cont_data[attr_tag*1-1].moviephone+'?rel=0&loop=1&modestbranding=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+						$('.work_cont_mobile_in').css({'overflow':'visible'});
 						$('.parallax,.work_cont_img_phone').remove()
 						// $('.parallax').css({'position':'absolute','opacity':0})
 						// setTimeout(function(){$('.parallax').remove();}, 900);
