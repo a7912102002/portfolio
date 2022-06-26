@@ -20,7 +20,9 @@
 </head>
 <body class="index-page">
 	<!--<canvas class="canvasbg" width="80" height="80"></canvas>-->
-	<div class="jsbg" width="1920" height="1080"></div>
+	<div class="jsbg" width="1920" height="1080">
+		<video id="bg-movie" style="background-color: rgba(255, 255, 255, 0); width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
+	</div>
 	<div data-relative-input="true" id="bg" class="bg" width="1920" height="1080">
 		<div data-depth="0.6" style="position: absolute; width: 100vw; height: 100vh;"><div class="bg_left"></div></div>
 		<div data-depth="0.6" style="position: absolute; width: 100vw; height: 100vh;"><div class="bg_right" style="border-radius: 100%; border: 1px solid #666; display: block;"></div></div>
@@ -227,8 +229,8 @@
 	<script>
 		// alert(window.innerWidth)
 		var winsize = {width:'1920', height:'1080'}
-		// var bg = document.querySelector('.bg')
-		// var jsbg = document.querySelector('.jsbg')
+		var bg = document.querySelector('.bg')
+		var jsbg = document.querySelector('.jsbg')
 		// var animate = lottie.loadAnimation({
 		// 	container: jsbg, // the dom element that will contain the animation
 		// 	renderer: 'svg',
@@ -246,18 +248,19 @@
 		function resize(){
 			winsize.width = window.innerWidth
 			winsize.height = window.innerHeight
-			// bg.getAttributeNode('width').value = winsize.width
-			// bg.getAttributeNode('height').value = winsize.height
-			// jsbg.getAttributeNode('width').value = winsize.width
-			// jsbg.getAttributeNode('height').value = winsize.height
+			bg.getAttributeNode('width').value = winsize.width
+			bg.getAttributeNode('height').value = winsize.height
+			jsbg.getAttributeNode('width').value = winsize.width
+			jsbg.getAttributeNode('height').value = winsize.height
 			// svgRendered = document.querySelector('.some-css-class-name')
-			// if(window.innerHeight > window.innerWidth){
-			// 	svgRendered.style.width='auto'
-			// 	svgRendered.style.height='100vh'
-			// }else{
-			// 	svgRendered.style.width='100vw'
-			// 	svgRendered.style.height='auto'
-			// }
+			svgRendered = document.getElementById('bg-movie')
+			if(window.innerHeight > window.innerWidth){
+				svgRendered.style.width='auto'
+				svgRendered.style.height='100vh'
+			}else{
+				svgRendered.style.width='100vw'
+				svgRendered.style.height='auto'
+			}
 
 			if(winsize.width>1440){
 				$(window).scrollTop(0);

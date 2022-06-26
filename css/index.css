@@ -567,18 +567,18 @@ body.scroll {
     background-position: center;
     position: relative;
     animation-name: author_img;
-    /* animation-duration: 8s; */
+    animation-duration: 8s;
     animation-iteration-count: infinite;
-    /* transition: opacity 240ms linear; */
+    transition: opacity 240ms linear;
 }
-.pc .author_img{
+/* .pc .author_img{
     animation-duration: 8s;
     transition: opacity 240ms linear;
 }
 .mobile .author_img{
     animation-duration: 3.5s;
     transition: opacity 150ms linear;
-}
+} */
 @keyframes author_img_ {
     0% { clip-path: polygon( 25% 0%, 75%   0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
     25% { clip-path: polygon( 0 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%); }

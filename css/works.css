@@ -534,13 +534,14 @@ body.page_work_content .bg_left{
     height: 16px;
     top: -16px;
     left: -100vw;
+    transition: left 600ms linear;
 }
-.pc .work_cont_txt .work-bg1{
+/* .pc .work_cont_txt .work-bg1{
     transition: left 600ms linear;
 }
 .mobile .work_cont_txt .work-bg1{
     transition: left 400ms linear;
-}
+} */
 .work_cont_txt.aos-animate .work-bg1{
     left: 40px;
 }
@@ -555,15 +556,17 @@ body.page_work_content .bg_left{
     height: calc(100% - 16px);
     top: 0;
     left: -100vw;
+    transition: left 500ms linear, width 500ms linear;
+    transition-delay: 400ms;
 }
-.pc .work_cont_txt .work-bg2{
+/* .pc .work_cont_txt .work-bg2{
     transition: left 500ms linear, width 500ms linear;
     transition-delay: 400ms;
 }
 .mobile .work_cont_txt .work-bg2{
     transition: left 200ms linear, width 200ms linear;
     transition-delay: 200ms;
-}
+} */
 
 
 .work_cont_txt.aos-animate .work-bg2{
@@ -580,15 +583,17 @@ body.page_work_content .bg_left{
     height: 100%;
     top: 0;
     left: -100vw;
+    transition: left 500ms linear, width 500ms linear;
+    transition-delay: 800ms;
 }
-.pc .work_cont_txt .container:before{
+/* .pc .work_cont_txt .container:before{
     transition: left 500ms linear, width 500ms linear;
     transition-delay: 800ms;
 }
 .mobile .work_cont_txt .container:before{
     transition: left 300ms linear, width 300ms linear;
     transition-delay: 400ms;
-}
+} */
 .work_cont_txt.aos-animate .container:before{
     width: 100%;
     left: 0;

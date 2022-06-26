@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<div class="jsbg" width="1920" height="1080">
-		<video id="bg-movie" style="background-color: rgb(0, 0, 0); height: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
+		<video id="bg-movie" style="background-color: rgba(255, 255, 255, 0); width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
 	</div>
 
 <script type="text/javascript">
@@ -304,8 +304,8 @@
 	<script>
 		// alert(window.innerWidth)
 		var winsize = {width:'1920', height:'1080'}
-		// var bg = document.querySelector('.bg')
-		// var jsbg = document.querySelector('.jsbg')
+		var bg = document.querySelector('.bg')
+		var jsbg = document.querySelector('.jsbg')
 		// var animate = lottie.loadAnimation({
 		// 	container: jsbg, // the dom element that will contain the animation
 		// 	renderer: 'svg',
@@ -323,18 +323,19 @@
 		function resize(){
 			winsize.width = window.innerWidth
 			winsize.height = window.innerHeight
-			// bg.getAttributeNode('width').value = winsize.width
-			// bg.getAttributeNode('height').value = winsize.height
-			// jsbg.getAttributeNode('width').value = winsize.width
-			// jsbg.getAttributeNode('height').value = winsize.height
+			bg.getAttributeNode('width').value = winsize.width
+			bg.getAttributeNode('height').value = winsize.height
+			jsbg.getAttributeNode('width').value = winsize.width
+			jsbg.getAttributeNode('height').value = winsize.height
 			// svgRendered = document.querySelector('.some-css-class-name')
-			// if(window.innerHeight > window.innerWidth){
-			// 	svgRendered.style.width='auto'
-			// 	svgRendered.style.height='100vh'
-			// }else{
-			// 	svgRendered.style.width='100vw'
-			// 	svgRendered.style.height='auto'
-			// }
+			svgRendered = document.getElementById('bg-movie')
+			if(window.innerHeight > window.innerWidth){
+				svgRendered.style.width='auto'
+				svgRendered.style.height='100vh'
+			}else{
+				svgRendered.style.width='100vw'
+				svgRendered.style.height='auto'
+			}
 			
 			var cursor = document.getElementById('cursor')
 			if(winsize.width>1440){
