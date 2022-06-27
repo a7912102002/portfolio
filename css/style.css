@@ -22,7 +22,7 @@ img::-moz-selection {
   position: fixed;
   top: 0;
   left: 0;
-  background: #fff1ef;
+  /* background: #fff1ef; */
   z-index: 999;
 }
 .loading_progress{
@@ -31,15 +31,11 @@ img::-moz-selection {
   display: block;
   width: 0;
 }
-
-
-
 .mul13 {
   width: 30px;
   height: 30px;
   position: relative;
 }
-  
 .m13s {
   height: 30px;
   width: 30px;
@@ -47,19 +43,16 @@ img::-moz-selection {
   position: absolute;
   opacity: .75;
 } 
- 
 .m13c1 {
   background-color: #68C3A3;
   -webkit-animation: m13s1anim 2s infinite linear;
   animation: m13s1anim 2s infinite linear;
 }
-  
 .m13c2 {
   background-color: #EC644B;
   -webkit-animation: m13s2anim 2s infinite linear;
   animation: m13s2anim 2s infinite linear;
 }
-  
 @-webkit-keyframes m13s1anim {
   0%, 100% {
      -webkit-transform: translateX(-15px);
@@ -79,8 +72,7 @@ img::-moz-selection {
      transform: scale(1.4);
      opacity: .8;
   }
-} 
- 
+}
 @keyframes m13s1anim {
   0%, 100% {
      -webkit-transform: translateX(-15px);
@@ -100,8 +92,7 @@ img::-moz-selection {
      transform: scale(1.4);
      opacity: .8;
   }
-} 
- 
+}
 @-webkit-keyframes m13s2anim {
   0%, 100% {
      -webkit-transform: translateX(15px);
@@ -121,8 +112,7 @@ img::-moz-selection {
      transform: scale(0.6);
      opacity: .25;
   }
-} 
- 
+}
 @keyframes m13s2anim {
   0%, 100% {
      -webkit-transform: translateX(15px);
