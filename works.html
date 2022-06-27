@@ -19,14 +19,24 @@
 	<script src="scripts/jquery-3.2.1.min.js"></script>
 </head>
 <body class="works-page">
-	<div class="loading flex flex-center" style="width: 100%; height: 1080px; align-items: center;">
-		<div class="loading_outside" style="max-width: 360px; width: 100%;">
-			<div class="loading_progress"></div>
-		</div>
-	</div>
 	<div class="jsbg" width="1920" height="1080">
 		<video id="bg-movie" style="background-color: rgba(255, 255, 255, 0); width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
 	</div>
+	
+	<div class="loading flex flex-center" style="width: 100%; height: 1080px; align-items: center;">
+		<div class="loading_outside" style="max-width: 360px; width: 100%;">
+			<div class="loading_logo" style="margin: 0 auto 50px; max-width: 58px;">
+				<div class="mul13">
+					<div class="m13s m13c1"></div>
+					<div class="m13s m13c2"></div>
+				</div>
+				<!-- <lottie-player src="images/loading.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop="true" controls="true" autoplay="true"></lottie-player> -->
+			</div>
+			<div class="loading_progress"></div>
+			<div style="text-align: center; margin-top: 40px;">loading...</div>
+		</div>
+	</div>
+ 
 
 <script type="text/javascript">
 	$('.loading_progress').animate({'width':'10%'},50); 
@@ -292,8 +302,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js"></script>
 	<!-- <script src="scripts/parallax.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<script src="scripts/lottie.min.js"></script>
+	<!-- <script src="scripts/lottie.min.js"></script> -->
 	<!-- <script src="https://unpkg.com/lottie-web@5.8.1/build/player/lottie.js"></script> -->
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<!-- <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 	<script src="scripts/jquery.mousewheel.min.js"></script>
@@ -318,6 +329,13 @@
 		// 	} 
 		// });
 		// animate.setSpeed(0.5);
+
+
+		// const player = document.querySelector("lottie-player");
+		// player.controls = false
+		// player.seek(0)
+		
+		
 
 		var svgRendered
 		function resize(){
