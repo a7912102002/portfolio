@@ -15,14 +15,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css?v=26"> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/works.css">
-	<title>HUANG TING YA 作品集</title>
 	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<title>HUANG TING YA 作品集</title>
 </head>
 <body class="works-page">
-	<div class="jsbg" width="1920" height="1080">
-		<video id="bg-movie" style="background-color: rgba(255, 255, 255, 0); width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
-	</div>
-
 	<div class="loading flex flex-center" style="width: 100%; height: 1080px; align-items: center;">
 		<div class="loading_outside" style="max-width: 360px; width: 100%;">
 			<div class="loading_logo" style="margin: 0 auto 50px; max-width: 58px;">
@@ -36,11 +32,13 @@
 			<div style="text-align: center; margin-top: 40px;">loading...</div>
 		</div>
 	</div>
- 
-
 <script type="text/javascript">
 	$('.loading_progress').animate({'width':'10%'},50); 
 </script>
+
+	<div class="jsbg" width="1920" height="1080">
+		<video id="bg-movie" style="background-color: rgba(255, 255, 255, 0); width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
+	</div>
 	
 	<div data-relative-input="true" id="bg" class="bg" width="1920" height="1080">
 		<div data-depth="0.6" style="position: absolute; width: 100vw; height: 100vh;"><div class="bg_left"></div></div>
@@ -485,7 +483,6 @@
 			window.onresize = resize;
 		};
 		$(document).ready(function(){
-			requestAnimationFrame(draw)
 			$('.work_name_en').addClass('load')
 
 			var web_url = window.location.href;
@@ -666,6 +663,8 @@
 				// }
 			});
 			AOS.init();
+
+			requestAnimationFrame(draw)
 		});
 	</script>
 
