@@ -49,7 +49,7 @@
 	$('.loading_progress').animate({'width':'20%'},50); 
 </script>
 	<main class="main">
-		<section class="portfolio_content active">
+		<section class="portfolio_content">
 			<div id="portfolio" class="portfolio">
 				<div class="container">
 					<div class="logo ml11" style="font-family: 'Permanent Marker', cursive; position: relative;">
@@ -328,6 +328,7 @@
 		};
 
 		$(document).ready(function(){
+			$('.portfolio_content').addClass('active')
 			var web_url = window.location.href;
 			var web_url_before;
 			if(web_url.indexOf('portfolio/index.html') != -1 || web_url.indexOf('portfolio/') != -1){
