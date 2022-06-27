@@ -493,7 +493,7 @@ body.scroll {
     top: -4px;
     left: -32px;
     z-index: 1;
-    background: rgba(141, 144, 156, 1);
+    background: rgba(141, 144, 156, .5);
 
     height: 15px;
     top: calc(100% - 13px);
@@ -703,7 +703,7 @@ body.scroll {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-size: 0 100%;
-    -webkit-text-stroke: 0.5px #8d909c;
+    -webkit-text-stroke: 0.5px #a57c00;
     display: inline-block;
     position: relative;
     margin-right: 20px;
@@ -756,7 +756,7 @@ body.scroll {
     /* display: inline-block;
     position: relative; */
     color: #000;
-    background-image: linear-gradient(#F9BE00, #F9BE00);
+    background-image: linear-gradient(#EC644B, #EC644B);
     background-position: left bottom;
     background-size: 100% 4px;
     background-repeat: no-repeat;

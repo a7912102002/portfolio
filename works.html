@@ -37,7 +37,7 @@
 </script>
 
 	<div class="jsbg" width="1920" height="1080">
-		<video id="bg-movie" style="background-color: rgba(255, 255, 255, 0); width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
+		<video id="bg-movie" style="width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
 	</div>
 	
 	<div data-relative-input="true" id="bg" class="bg" width="1920" height="1080">
@@ -77,7 +77,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>01</i>
+							<i tag="01">01</i>
 							<div>Vue.js + element UI前端畫面製作、<br>api串接、<br>制定風格 UI kits</div>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>02</i>
+							<i tag="02">02</i>
 							<div>畫面設計、前端切版</div>
 						</div>
 					</div>
@@ -103,7 +103,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>03</i>
+							<i tag="03">03</i>
 							<div>畫面設計、前端切版</div>
 						</div>
 					</div>
@@ -116,7 +116,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>04</i>
+							<i tag="04">04</i>
 							<div>畫面設計、前端切版</div>
 						</div>
 					</div>
@@ -129,7 +129,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>05</i>
+							<i tag="05">05</i>
 							<div>前端切版、瀑布流</div>
 						</div>
 					</div>
@@ -142,7 +142,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>06</i>
+							<i tag="06">06</i>
 							<div>首頁全屏滾動下捲效果製作</div>
 						</div>
 					</div>
@@ -155,7 +155,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>07</i>
+							<i tag="07">07</i>
 							<div>畫面設計、前端切版</div>
 						</div>
 					</div>
@@ -168,7 +168,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>08</i>
+							<i tag="08">08</i>
 							<div>畫面設計、前端切版</div>
 						</div>
 					</div>
@@ -181,7 +181,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>09</i>
+							<i tag="09">09</i>
 							<div>畫面設計、前端切版</div>
 						</div>
 					</div>
@@ -194,7 +194,7 @@
 							</a>
 						</div>
 						<div class="work_text">
-							<i>10</i>
+							<i tag="10">10</i>
 							<div>畫面設計、前端切版</div>
 						</div>
 					</div>
@@ -212,6 +212,15 @@
 
 				<div style="padding: 0 10.5vw; margin: 0 auto; box-sizing: content-box;">
 					<div class="parallax">
+						<div class="img-loding" style="">
+							<lord-icon class="img-icon"
+								src="https://cdn.lordicon.com/fgkmrslx.json"
+								trigger="loop"
+								colors="primary:#e4e4e4,secondary:#b4b4b4"
+								style="width:100px; height:100px;">
+							</lord-icon>
+							<div class="loding-txt">lodong ...</div>
+						</div>
 						<div id="pic-bg" class="picbgbox"></div>
 						<div style="clear:both;"></div>
 					</div>
@@ -252,6 +261,15 @@
 					<div class="work_cont_mobile">
 						<div class="work_cont_mobile_in">
 							<div class="phone_scroll">
+								<div class="img-loding">
+									<lord-icon class="img-icon"
+										src="https://cdn.lordicon.com/fgkmrslx.json"
+										trigger="loop"
+										colors="primary:#e4e4e4,secondary:#b4b4b4"
+										style="width:100px; height:100px;">
+									</lord-icon>
+									<div class="loding-txt">lodong ...</div>
+								</div>
 								<img class="work_cont_img_phone" src="images/works/01/phone.png" alt="" style="width: 100%;">
 							</div>
 						</div>
@@ -310,6 +328,7 @@
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/CSSPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenLite.min.js"></script>
+	<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
 	<script>
 		var winsize = {width:'1920', height:'1080'}
 		var bg = document.querySelector('.bg')
