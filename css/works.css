@@ -412,7 +412,7 @@ body.page_work_content {
     position: relative;
     pointer-events: all;
     visibility: visible;
-    opacity: 1;
+    opacity: 1 !important;
 }
 .mobile .work_content.active{
     /* position: fixed; */
