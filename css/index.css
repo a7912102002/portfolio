@@ -353,13 +353,15 @@ body.scroll {
     pointer-events: none;
     transition: opacity 240ms linear;
     opacity: 0;
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
 }
 .about_content.active{
     position: relative;
     pointer-events: all;
-    visibility: visible;
+    /* visibility: visible; */
     opacity: 1 !important;
+    display: block;
 }
 
 
