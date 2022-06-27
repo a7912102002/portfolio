@@ -414,9 +414,12 @@ body.page_work_content {
     visibility: visible;
     opacity: 1;
 }
-.mobile .work_content.active{
-    /* position: fixed; */
+/* .mobile .work_content{
+    display: none;
 }
+.mobile .work_content.active{
+    display: block;
+} */
 body.page_work_content .bg_left{
     background: radial-gradient(circle closest-side at center,rgba(143,182,255,1),rgba(143,182,255,0));
     animation-duration: 8s;

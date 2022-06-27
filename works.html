@@ -54,7 +54,7 @@
 		<a class="in_logo" href="index.html"><span>HUANG</span>TING Ya</a>
 		<button type="button" class="work_content_close"><span></span></button>
 	</header>
-	<main class="main">
+	<main class="main" style="opacity: 0;">
 		<section class="work_list">
 			<div class="work_title">
 				<div class="work_name">
@@ -388,10 +388,10 @@
 			if(!$('.work_content').hasClass('active')&&$('.work_ul').hasClass('owl-loaded')){
 				$('.work_list').addClass('active');
 			}
-			if($('.work_list').hasClass('active')){
+			if($('.work_list').hasClass('active') || $('.work_content').hasClass('active')){
+				$('.main').css({'opacity':1})
 				$('.loading_progress').animate({'width':'100%'},50);
-				$('.loading').fadeOut();
-				return false;
+				setTimeout(function(){$('.loading').fadeOut(); return false;}, 50);
 			}
 			// else{
 			// 	if($('.loading_progress').css('width') == (360*0.8)+'px'){
