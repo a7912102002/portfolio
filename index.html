@@ -300,9 +300,9 @@
 
 		$(document).ready(function(){
 			var web_url = window.location.href;
-			var web_url_before = web_url.substr(0, web_url.indexOf('portfolio/')*1+10)
-			if(web_url.indexOf('index.html') != -1 || web_url.indexOf('portfolio/') != -1){
-				if((web_url.substr(web_url.indexOf('index.html')*1+9, 2)=='l#')||(web_url.substr(web_url.indexOf('portfolio/')*1+8, 3)=='o/#')){
+			var web_url_before = web_url.substr(0, web_url.indexOf('tlify.app/')*1+10)
+			if(web_url.indexOf('index.html') != -1 || web_url.indexOf('tlify.app/') != -1){
+				if((web_url.substr(web_url.indexOf('index.html')*1+9, 2)=='l#')||(web_url.substr(web_url.indexOf('tlify.app/')*1+8, 3)=='o/#')){
 					setTimeout(function () {
 						$(".menu .about").trigger('click');
 					}, 300);
