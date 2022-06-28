@@ -253,27 +253,12 @@
 	<script src="https://unpkg.com/lottie-web@5.8.1/build/player/lottie.js"></script>
 	<!-- <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script type="text/javascript">
-	$('.loading_progress').animate({'width':'70%'},50); 
-</script>
-	<!-- <script src="scripts/lottie-scale.js"></script> -->
 	<script>
+		$('.loading_progress').animate({'width':'70%'},50); 
+
 		var winsize = {width:'1920', height:'1080'}
 		var bg = document.querySelector('.bg')
 		var jsbg = document.querySelector('.jsbg')
-		// var animate = lottie.loadAnimation({
-		// 	container: jsbg, // the dom element that will contain the animation
-		// 	renderer: 'svg',
-		// 	loop: true,
-		// 	autoplay: true,
-		// 	path: 'images/bg2.json', // the path to the animation json
-		// 	rendererSettings : { 
-		// 		preserveAspectRatio : 'xMidYMid meet',
-		// 		className : 'some-css-class-name',
-		// 	} 
-		// });
-		// animate.setSpeed(0.5);
-
 		var svgRendered
 		function resize(){
 			winsize.width = window.innerWidth
@@ -282,7 +267,6 @@
 			bg.getAttributeNode('height').value = winsize.height
 			jsbg.getAttributeNode('width').value = winsize.width
 			jsbg.getAttributeNode('height').value = winsize.height
-			// svgRendered = document.querySelector('.some-css-class-name')
 			svgRendered = document.getElementById('bg-movie')
 			if(window.innerHeight > window.innerWidth){
 				svgRendered.style.width='auto'
@@ -298,11 +282,7 @@
 				oCursor(cursor)
 			}else{
 				cursor.style.display = 'none';
-
 				$('body').removeClass('pc').addClass('mobile')
-				// if(!$('body').hasClass('page_work_content')){
-				// 	$('.work_list').addClass('active');
-				// }
 			}
 		}
 
@@ -324,13 +304,41 @@
 				oDiv.innerHTML = show;
 			}
 		}
+		function mouseOver(){
+			var oDiv = document.getElementById('cursor');
+			oDiv.classList.add("a_hover");
+		}
+		function mouseOut(){
+			var oDiv = document.getElementById('cursor');
+			oDiv.classList.remove("a_hover");
+		}
+		/*about圖片切換*/
+		function vistPic(section,id){
+			let picDiv = document.getElementsByClassName('author_img')[0];
+			picDiv.style.opacity = 0;
+			switch (section) {
+				case 'company':
+					setTimeout(function(){picDiv.style.backgroundImage = 'url(images/about/work_logo/'+id+'.png)'}, 240);
+					break;
+				case 'null':
+					setTimeout(function(){picDiv.style.backgroundImage = 'url(images/about/author.png)'}, 240);
+					break;
+			
+				default:
+					break;
+			}
+			setTimeout(function(){picDiv.style.opacity = 1;}, 300);
+		}
 
-		window.onload = function() {
-			resize();
-			window.onresize = resize;
-		};
+		// window.onload = function() {
+		// 	resize();
+		// 	window.onresize = resize;
+		// };
 
 		$(document).ready(function(){
+			resize();
+			window.onresize = resize;
+
 			$('.portfolio_content').addClass('active')
 			var web_url = window.location.href;
 			var web_url_before;
@@ -351,29 +359,13 @@
 				}
 			}
 
-			// var owl = $('.owl-carousel');
+			if($('.portfolio_content').hasClass('active')||$('.about_content').hasClass('active')){
+				$('.main').css({'opacity':1})
+				$('.loading_progress').animate({'width':'100%'},50);
+				setTimeout(function(){$('.loading').fadeOut(); return false;}, 300);
+			}
+
 			$("a.about").click(function(){
-				// owl.owlCarousel({
-				// 	loop:false,
-				// 	autoWidth:true,
-				// 	items:1,
-				// 	margin:10,
-				// 	nav:true,
-				// 	navContainer: '.work_nav',
-				// 	smartSpeed:1500,
-				// 	navText: ["<div class='nav-prev' onmouseover='mouseOver()' onmouseout='mouseOut()'></div>","<div class='nav-next' onmouseover='mouseOver()' onmouseout='mouseOut()'></div>"],
-				// 	responsive:{
-				// 		0:{
-				// 			items:1
-				// 		},
-				// 		600:{
-				// 			items:1
-				// 		},
-				// 		1000:{
-				// 			items:1
-				// 		}
-				// 	}
-				// })
 				$('.about_content').addClass('active')
 				$('.portfolio_content').removeClass('active')
 				$('body').addClass('scroll page_about_content')
@@ -382,13 +374,10 @@
 
 			$(".about_content_close").click(function(){
 				location.href = web_url_before;
-
 				$(window).scrollTop(0)
 				$('.about_content').removeClass('active')
 				$('.portfolio_content').addClass('active')
 				$('body').removeClass('scroll page_about_content')
-				// swiper.destroy();
-				// $('.work_content').animate({'transform':'translate3d(0px,'+ winsize.height +', 0px) skewY(0deg)'},50);
 			});
 
 			let companyLi = document.getElementsByClassName('company-li');
@@ -420,9 +409,6 @@
 							vistPic(pic_section,pic_picurl)
 						}
 					}
-					
-					// vistPic(companyLi[$('.company-li.active').length-1].getAttribute('section'),companyLi[$('.company-li.active').length-1].getAttribute('picurl'))
-
 
 					companyLine = 0;
 					$('.company-li.active').each(function(index, value){
@@ -440,67 +426,18 @@
 					$('.mobile .header').removeClass('active')
 				}
 			});
-			// $('.company-li').hover(function(){
-			// 	let picDiv = $('.author_pic .author_img').css('backgroundImage')
-			// 	let tag = $(this).attr('tag')
-			// 	switch (tag) {
-			// 		case 'company1':
-			// 			console.log(1)
-			// 			break;
-			// 		case 'company2':
-			// 			console.log(2)
-			// 			break;
-			// 		case 'company3':
-			// 			console.log(3)
-			// 			break;
-				
-			// 		default:
-			// 			break;
-			// 	}
-			// });
-			if($('.portfolio_content').hasClass('active')||$('.about_content').hasClass('active')){
-				$('.main').css({'opacity':1})
-				$('.loading_progress').animate({'width':'100%'},50);
-				setTimeout(function(){$('.loading').fadeOut(); return false;}, 50);
-			}
-		});
-
-		function vistPic(section,id){
-			let picDiv = document.getElementsByClassName('author_img')[0];
-			picDiv.style.opacity = 0;
-			switch (section) {
-				case 'company':
-					setTimeout(function(){picDiv.style.backgroundImage = 'url(images/about/work_logo/'+id+'.png)'}, 240);
-					break;
-				case 'null':
-					setTimeout(function(){picDiv.style.backgroundImage = 'url(images/about/author.png)'}, 240);
-					break;
 			
-				default:
-					break;
-			}
-			setTimeout(function(){picDiv.style.opacity = 1;}, 300);
-		}
-
-		function mouseOver(){
-			var oDiv = document.getElementById('cursor');
-			oDiv.classList.add("a_hover");
-		}
-		function mouseOut(){
-			var oDiv = document.getElementById('cursor');
-			oDiv.classList.remove("a_hover");
-		}
+		});//ready
+		new WOW().init();
 	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 	<script>
 		var scene = document.getElementById('bg');
 		var parallaxInstance = new Parallax(scene, {
 			relativeInput: true
 		});
-		// parallaxInstance.friction(0.2, 0.2);
-	</script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-	<script>
 		// Wrap every letter in a span
 		var textWrapper = document.querySelector('.ml11 .letters');
 		textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
@@ -527,43 +464,6 @@
 			offset: '-=775',
 			delay: (el, i) => 34 * (i+1)
 		})
-		new WOW().init();
 	</script>
-	<!-- <script src="scripts/lity-2.3.0/dist/lity.js?v=3"></script>
-	<script src="scripts/OwlCarousel2-2.2.1/dist/owl.carousel.js"></script>
-	<script src="scripts/main.js?v=22"></script>
-	<script>
-		$(document).ready(function(){
-			$(window).on('resize', function() {
-				if ($('.plus-list .price-box .btn').is(':visible')) {
-					$('.plus-list').addClass('owl-carousel');
-					$('.owl-carousel').owlCarousel({
-					    loop:false,
-					    nav:false,
-					    responsive:{
-					        0:{
-					            items:3
-					        },
-					        414:{
-					            items:3
-					        },
-					        666:{
-					            items:3
-					        },
-					        1000:{
-					            items:4
-					        }
-					    }
-					})
-				} else {
-					if ($('.plus-list .price-box .btn').is(':hidden')) {
-						// location.reload();
-						$('.plus-list').removeClass('owl-carousel');
-						return false;
-					}
-				}
-			});
-		});
-	</script> -->
 </body>
 </html>
