@@ -8,14 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="scripts/wow/css/libs/animate.css">
 	<!-- <link rel="stylesheet" type="text/css" href="scripts/aos/aos.css"> -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css">
-	<!-- <link rel="stylesheet" type="text/css" href="scripts/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/font/icomoon/style.css?v=1">
-	<link href="scripts/OwlCarousel2-2.2.1/dist/assets/owl.carousel.css" rel="stylesheet">
-	<link href="scripts/lity-2.3.0/dist/lity.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css?v=26"> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=1">
-	<link rel="stylesheet" type="text/css" href="css/index.css?v=2">
+	<link rel="stylesheet" type="text/css" href="css/index.css?v=3">
 	<script src="scripts/jquery-3.2.1.min.js"></script>
 	<title>HUANG TING YA 作品集</title>
 </head>
@@ -39,7 +33,7 @@
 </script>
 	<!--<canvas class="canvasbg" width="80" height="80"></canvas>-->
 	<div class="jsbg" width="1920" height="1080">
-		<video id="bg-movie" style="width: 100%;" src="images/bg.mp4" autoplay loop muted playsinline>您的瀏覽器不支持播放該視頻！</video>
+		<video id="bg-movie" style="width: 100%; background:url('images/bg.jpg')" src="images/bg.mp4" autoplay loop muted playsinline>您的瀏覽器不支持播放該視頻！</video>
 	</div>
 	<div data-relative-input="true" id="bg" class="bg" width="1920" height="1080">
 		<div data-depth="0.6" style="position: absolute; width: 100vw; height: 100vh;"><div class="bg_left"></div></div>
@@ -240,7 +234,6 @@
 	</div>
 	<div id="cursor"></div>
 	
-	<!-- <script src="scripts/jquery-3.2.1.min.js"></script> -->
 	<!-- <script src="scripts/modernizr.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<!-- <script src="scripts/wow/dist/wow.min.js"></script> -->
@@ -251,8 +244,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<!-- <script src="scripts/lottie.js"></script> -->
 	<script src="https://unpkg.com/lottie-web@5.8.1/build/player/lottie.js"></script>
-	<!-- <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 	<script>
 		$('.loading_progress').animate({'width':'70%'},50);
 		var winsize = {width:'1920', height:'1080'}
@@ -329,11 +320,6 @@
 			setTimeout(function(){picDiv.style.opacity = 1;}, 300);
 		}
 
-		// window.onload = function() {
-		// 	resize();
-		// 	window.onresize = resize;
-		// };
-
 		$(document).ready(function(){
 			resize();
 			window.onresize = resize;
@@ -365,7 +351,7 @@
 
 				//進度條
 				$('.loading_progress').animate({'width':'100%'},50);
-				setTimeout(function(){$('.loading').fadeOut(); return false;}, 2500);
+				setTimeout(function(){$('.loading').fadeOut(); return false;}, 0);
 			}
 
 			$("a.about").click(function(){

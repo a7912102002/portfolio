@@ -4,7 +4,7 @@
     display: none;
 }
 body {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 body.scroll {
     overflow-y: visible;
@@ -16,6 +16,7 @@ body.scroll {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background: url(images/bg.jpg);
 }
 .bg{
     /* position: absolute; */
@@ -192,7 +193,7 @@ body.scroll {
     margin-top: 100px;
     position: relative;
 }
-.portfolio a:after{
+.portfolio_content.active .portfolio a:after{
     content: '';
     display: inline-block;
     width: 0;
@@ -209,7 +210,7 @@ body.scroll {
     51% { opacity: 1; left: -32px; width: calc(100% + 64px); }
     100% { opacity: 1; left: -32px; width: calc(100% + 64px); }
 }
-.portfolio a:before{
+.portfolio_content.active .portfolio a:before{
     content: '';
     display: inline-block;
     width: 0;
@@ -218,9 +219,14 @@ body.scroll {
     top: -4px;
     left: -32px;
     z-index: 1;
+}
+.portfolio_content.active .portfolio a.about:before{
     background: #F9BE00;
 }
-.portfolio a.animated:before{
+.portfolio_content.active .portfolio a.works:before{
+    background: #68C3A3;
+}
+.portfolio_content.active .portfolio a.animated:before{
     animation: passing-bar-2 1s ease 0s 1 normal forwards;
 }
 @keyframes passing-bar-2{
@@ -285,7 +291,7 @@ body.scroll {
 .menu a:hover .link_label--hover{
     transform: translate3d(0, 0px, 0px);
 } */
-.portfolio .menu a:hover:before{
+.pc .portfolio .menu a:hover:before{
     content: '';
     display: inline-block;
     width: calc(100% + 64px);
@@ -294,8 +300,13 @@ body.scroll {
     top: -4px;
     left: -32px;
     z-index: -1;
-    background: #F9BE00;
     transition: width 1s cubic-bezier(.19,1,.22,1);
+}
+.pc .portfolio .menu a.about:hover:before{
+    background: #F9BE00;
+}
+.pc .portfolio .menu a.works:hover:before{
+    background: #68C3A3;
 }
 
 /*about*/
@@ -324,6 +335,7 @@ body.scroll {
     transition: all .3s linear;
 }
 .mobile .header.active .in_logo{
+    padding: 0 20px;
     transform: scale(.8);
 }
 .in_logo span{
@@ -450,7 +462,7 @@ body.scroll {
 
 
 .about-name{
-    font-size: 38px;
+    font-size: 42px;
     position: relative;
     display: inline-block;
     margin-left: 30px;
@@ -464,7 +476,7 @@ body.scroll {
 }
 @media screen and (max-width: 512px) {
     .mobile .about-name{
-        max-width: 250px;
+        max-width: 260px;
     }
 }
 .about-name:after{
