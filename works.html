@@ -13,7 +13,7 @@
 	<link href="scripts/OwlCarousel2-2.2.1/dist/assets/owl.carousel.css" rel="stylesheet">
 	<link href="scripts/lity-2.3.0/dist/lity.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css?v=26"> -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?v=1">
 	<link rel="stylesheet" type="text/css" href="css/works.css?v=2">
 	<script src="scripts/jquery-3.2.1.min.js"></script>
 	<title>HUANG TING YA 作品集</title>
@@ -390,7 +390,7 @@
 			if($('.work_list').hasClass('active') || $('.work_content').hasClass('active')){
 				$('.main').css({'opacity':1})
 				$('.loading_progress').animate({'width':'100%'},50);
-				setTimeout(function(){$('.loading').fadeOut(); return false;}, 50);
+				setTimeout(function(){$('.loading').fadeOut(); return false;}, 2500);
 			}
 			// else{
 			// 	if($('.loading_progress').css('width') == (360*0.8)+'px'){
@@ -470,13 +470,17 @@
 					$(".parallax #pic-bg").css({'height':$('.fadein_pic').height()})
 				}
 			}
-		}		
-
-		window.onload = function() {
+		}
+		// window.onload = function() {
+		// 	resize();
+		// 	window.onresize = resize;
+		// };
+		$(document).ready(function(){
 			resize();
 			window.onresize = resize;
-		};
-		$(document).ready(function(){
+
+			$("video")[0].load();
+
 			$('.work_name_en').addClass('load')
 
 			var web_url = window.location.href;
