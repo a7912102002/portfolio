@@ -39,7 +39,7 @@
 </script>
 	<!--<canvas class="canvasbg" width="80" height="80"></canvas>-->
 	<div class="jsbg" width="1920" height="1080">
-		<video id="bg-movie" style="width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
+		<video id="bg-movie" style="width: 100%;" src="images/bg.mp4" autoplay loop muted playsinline>您的瀏覽器不支持播放該視頻！</video>
 	</div>
 	<div data-relative-input="true" id="bg" class="bg" width="1920" height="1080">
 		<div data-depth="0.6" style="position: absolute; width: 100vw; height: 100vh;"><div class="bg_left"></div></div>
@@ -360,6 +360,8 @@
 
 			if($('.portfolio_content').hasClass('active')||$('.about_content').hasClass('active')){
 				$('.main').css({'opacity':1})
+
+				//進度條
 				$('.loading_progress').animate({'width':'100%'},50);
 				setTimeout(function(){$('.loading').fadeOut(); return false;}, 2500);
 			}
@@ -432,6 +434,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 	<script>
+		//背景滑鼠偏移
 		var scene = document.getElementById('bg');
 		var parallaxInstance = new Parallax(scene, {
 			relativeInput: true

@@ -37,7 +37,7 @@
 </script>
 
 	<div class="jsbg" width="1920" height="1080">
-		<video id="bg-movie" style="width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted"></video>
+		<video id="bg-movie" style="width: 100%;" src="images/bg.mp4" autoplay="true" loop="true" muted="muted">您的瀏覽器不支持播放該視頻！</video>
 	</div>
 	
 	<div data-relative-input="true" id="bg" class="bg" width="1920" height="1080">
@@ -333,26 +333,6 @@
 		var winsize = {width:'1920', height:'1080'}
 		var bg = document.querySelector('.bg')
 		var jsbg = document.querySelector('.jsbg')
-		// var animate = lottie.loadAnimation({
-		// 	container: jsbg, // the dom element that will contain the animation
-		// 	renderer: 'svg',
-		// 	loop: true,
-		// 	autoplay: true,
-		// 	path: 'images/bg2.json', // the path to the animation json
-		// 	rendererSettings : { 
-		// 		preserveAspectRatio : 'xMidYMid meet',
-		// 		className : 'some-css-class-name',
-		// 	} 
-		// });
-		// animate.setSpeed(0.5);
-
-
-		// const player = document.querySelector("lottie-player");
-		// player.controls = false
-		// player.seek(0)
-		
-		
-
 		var svgRendered
 		function resize(){
 			winsize.width = window.innerWidth
@@ -465,11 +445,6 @@
 					}
 				}
 			})
-			// function loaded(){
-			// 	if(!$('.work_content').hasClass('active')&&$('.work_ul').hasClass('owl-loaded')){
-			// 		$('.work_list').addClass('active');
-			// 	}
-			// }setInterval(loaded,30)
 
 			owl.on('mousewheel', '.owl-stage', function (e) {
 				if (e.deltaY>0) {
@@ -539,27 +514,17 @@
 			$("a.work_a").click(function(){
 				let attr_tag = $(this).attr('tag')
 				if($(this).attr('target')!='_blank'){
-					/*金灰*/
-					// $('#__lottie_element_6 stop').eq(0).attr('stop-color','rgb(226 209 195)');
-					// $('#__lottie_element_6 stop').eq(1).attr('stop-color','rgb(253 252 251)');
-
 					// $('#__lottie_element_6 stop').eq(0).attr('stop-color','rgb(172 224 249)');
 					// $('#__lottie_element_6 stop').eq(1).attr('stop-color','rgb(255 241 235)');
 
 						list_posX = $(this).offset().left;
-						// list_posY = $(this).offset().top;
 						list_posY = $(this).offset().top - $(document).scrollTop()
 						list_picW = $(this).outerWidth();
-						// cont_posX = $('.work_cont_img_pc').offset().left-8;
-						// cont_posY = $('.work_cont_img_pc').offset().top - $(document).scrollTop()
-						// cont_picW = $('.work_cont_img_pc').outerWidth();
 						cont_posX = $('.parallax').offset().left - 8;
 						cont_posY = $('.parallax').offset().top - $(document).scrollTop()
 						cont_picW = $('.parallax').outerWidth();
 						list_scroll = $(window).scrollTop();
 
-					// $('.work_cont_img_pc').after('<img class="work_cont_banner" src="images/works/'+$(this).attr('tag')+'/pc_1.png">')
-					// $('.work_cont_img_pc').css({'display':'none'})
 					$('.parallax .picbgbox').css({'backgroundImage':"url(images/works/"+$(this).attr('tag')+"/pc_1.png)"})
 					$('.work_cont_img_phone').attr('src',"images/works/"+$(this).attr('tag')+"/phone.png")
 
@@ -568,7 +533,6 @@
 					$('.flex-div-2 .work_txt_title').after(work_cont_data[attr_tag*1-1].work)
 					$('.flex-btn a').attr('href',work_cont_data[attr_tag*1-1].url)
 					
-					// $('.work_cont_img_pc').css({'display':'none'})
 					if($(this).attr('img_nu')>0){
 						swiper_li="";
 						for(let li=1; li<=$(this).attr('img_nu'); li++){
@@ -577,15 +541,11 @@
 						$('.swiper-wrapper').html(swiper_li)
 					}else{
 						$('.work_cont_pc').remove()
-						// $('.parallax').after('<div class="moviediv"><video id="movie-pc" title="" style="background-color: rgb(0, 0, 0); width: 100%;" src="images/works/'+$(this).attr('tag')+'/pc.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video></div>')
 						$('.parallax').after('<div class="moviediv"><iframe width="100%" height="0" style="opacity: 0" src="https://www.youtube.com/embed/'+work_cont_data[attr_tag*1-1].moviepc+'?rel=0&loop=1&modestbranding=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
 						$('.moviediv iframe').attr('height',$('.moviediv iframe').outerWidth()*(27/56)).css({'opacity':1});
-						// $('.work_cont_img_phone').after('<video id="movie-phone" title="" style="background-color: rgb(0, 0, 0); height: 100%;" src="images/works/'+$(this).attr('tag')+'/phone.webm" autoplay="true" loop="true" muted="muted" controls controlsList="nodownload"></video>')
 						$('.work_cont_mobile_in').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+work_cont_data[attr_tag*1-1].moviephone+'?rel=0&loop=1&modestbranding=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
 						$('.work_cont_mobile_in').css({'overflow':'visible'});
 						$('.parallax,.work_cont_img_phone').remove()
-						// $('.parallax').css({'position':'absolute','opacity':0})
-						// setTimeout(function(){$('.parallax').remove();}, 900);
 					}
 					$('.content_in').before('<img class="fadein_pic" src="images/works/list_'+$(this).attr('tag')+'.jpg" style="position: absolute; width:'+list_picW+'px; left:'+list_posX+'px; top:'+list_posY+'px; z-index: 999; pointer-events: none;">')
 					$('.fadein_pic').animate({'width':cont_picW,'left':cont_posX,'top':0},350,'swing');//linear,swing
@@ -671,15 +631,6 @@
 				if($('body').hasClass('page_work_content')){
 					parallax()
 				}
-				// if($('.work_content').hasClass('active')){
-				// 	var scrollVal = $(this).scrollTop();
-				// 	var swiper_h = $('.mySwiper').outerHeight();
-				// 	if(scrollVal>swiper_h*0.5){
-				// 		swiper.autoplay.stop()
-				// 	}else{
-				// 		swiper.autoplay.start()
-				// 	}
-				// }
 			});
 			AOS.init();
 
@@ -687,8 +638,8 @@
 		});
 	</script>
 
-	<!--滑鼠游標-->
 	<script>
+		//滑鼠游標
 		function mouseOver(any){
 			var oDiv = document.getElementById('cursor');
 			if(any==null){
@@ -703,43 +654,12 @@
 			oDiv.classList.remove("a_hover");
 			oDiv.classList.remove("work_a_hover");
 		}
-	</script>
 
-	<!--背景滑鼠偏移-->
-	<script>
+		//背景滑鼠偏移
 		var scene = document.getElementById('bg');
 		var parallaxInstance = new Parallax(scene, {
 			relativeInput: true
 		});
-		// parallaxInstance.friction(0.2, 0.2);
-	</script>
-
-	<!--進度條-->
-	<script type="text/javascript">
-		// $('.loading_progress').animate({'width':'100%'},50);
-		/*
-		var time = 0
-		function draw(){
-			if($('.work_list').hasClass('active')){
-				$('.loading_progress').animate({'width':'100%'},50);
-				$('.loading').fadeOut();
-				return false;
-			}else{
-				if($('.loading_progress').css('width') == (360*0.8)+'px'){
-					time++
-				}
-				if(time == 30){
-					window.location.reload();
-				}
-			}
-			// if($('.loading_progress').css('width')=='360px'){
-			// 	$('.loading').fadeOut();
-			// 	return false;
-			// }
-			requestAnimationFrame(draw)
-		}
-		requestAnimationFrame(draw)
-		*/
 	</script>
 </body>
 </html>

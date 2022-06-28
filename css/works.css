@@ -212,6 +212,8 @@ body.page_work_content {
 .work_name small{
     display: block;
     font-size: 27px;
+}
+.pc .work_name small{
     font-weight: bold;
 }
 .mobile .work_name small{
