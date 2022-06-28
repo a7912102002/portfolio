@@ -254,7 +254,7 @@
 	<!-- <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 	<script>
-		$('.loading_progress').animate({'width':'70%'},50); 
+		$('.loading_progress').animate({'width':'70%'},50);
 		var winsize = {width:'1920', height:'1080'}
 		var bg = document.querySelector('.bg')
 		var jsbg = document.querySelector('.jsbg')
@@ -337,6 +337,8 @@
 		$(document).ready(function(){
 			resize();
 			window.onresize = resize;
+
+			$("video")[0].load();
 
 			$('.portfolio_content').addClass('active')
 			var web_url = window.location.href;
