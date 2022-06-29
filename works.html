@@ -48,7 +48,7 @@
 
 	<header class="header">
 		<a class="in_logo" href="index.html"><span>HUANG</span>TING Ya</a>
-		<button type="button" class="work_content_close"><span></span></button>
+		<button type="button" class="work_content_close" onmouseover='mouseOver("green")' onmouseout='mouseOut()'><span></span></button>
 	</header>
 	<main class="main" style="opacity: 0;">
 		<section class="work_list">
@@ -208,7 +208,7 @@
 
 				<div style="padding: 0 10.5vw; margin: 0 auto; box-sizing: content-box;">
 					<div class="parallax">
-						<div class="img-loding" style="">
+						<div class="img-loding">
 							<lord-icon class="img-icon"
 								src="https://cdn.lordicon.com/fgkmrslx.json"
 								trigger="loop"
@@ -248,7 +248,7 @@
 								</div>
 							</div>
 							<div class="flex-btn">
-								<a class="" href="" target="_blank">View Web</a>
+								<a class="" href="" target="_blank" onmouseover='mouseOver()' onmouseout='mouseOut()'>View Web</a>
 							</div>
 						</div>
 					</div>
@@ -278,8 +278,8 @@
 								<div class="total">6</div>
 							</div>
 							<div class="control">
-								<button class="swiper-button-prev slick-prev slick-arrow" type="button" style="display: inline-block;"></button>
-								<button class="swiper-button-next slick-next slick-arrow" type="button" style="display: inline-block;"></button>
+								<button class="swiper-button-prev slick-prev slick-arrow" type="button" onmouseover='mouseOver("green")' onmouseout='mouseOut()' style="display: inline-block;"></button>
+								<button class="swiper-button-next slick-next slick-arrow" type="button" onmouseover='mouseOver("red")' onmouseout='mouseOut()' style="display: inline-block;"></button>
 							</div>
 						</div>
 						<div class="swiper mySwiper">
@@ -419,7 +419,7 @@
 				nav:true,
 				navContainer: '.work_nav',
 				smartSpeed:1000,
-				navText: ["<div class='nav-prev' onmouseover='mouseOver()' onmouseout='mouseOut()'></div>","<div class='nav-next' onmouseover='mouseOver()' onmouseout='mouseOut()'></div>"],
+				navText: [`<div class='nav-prev' onmouseover='mouseOver("green")' onmouseout='mouseOut()'></div>`,`<div class='nav-next' onmouseover='mouseOver("red")' onmouseout='mouseOut()'></div>`],
 				responsive:{
 					0:{
 						items:1
@@ -636,11 +636,23 @@
 			if(any=='work'){
 				oDiv.classList.add("work_a_hover");
 			}
+			if(any=='yellow'){
+				oDiv.classList.add("work_a_hover_yellow");
+			}
+			if(any=='red'){
+				oDiv.classList.add("work_a_hover_red");
+			}
+			if(any=='green'){
+				oDiv.classList.add("work_a_hover_green");
+			}
 		}
 		function mouseOut(){
 			var oDiv = document.getElementById('cursor');
 			oDiv.classList.remove("a_hover");
 			oDiv.classList.remove("work_a_hover");
+			oDiv.classList.remove("work_a_hover_yellow");
+			oDiv.classList.remove("work_a_hover_red");
+			oDiv.classList.remove("work_a_hover_green");
 		}
 
 		//背景滑鼠偏移

@@ -102,7 +102,7 @@
 			<header class="header">
 				<a class="in_logo" href="index.html" style="font-family: 'Permanent Marker', cursive;"><span class="display:inline-block;">HUANG</span>TING Ya</a>
 			</header>
-			<button type="button" class="about_content_close"><span></span></button>
+			<button type="button" class="about_content_close" onmouseover='mouseOver("green")' onmouseout='mouseOut()'><span></span></button>
 			<div class="about-container container">
 				<div class="about-flex flex flex-center">
 					<div class="author-pic-box">
@@ -183,9 +183,9 @@
 									</div>
 									<span class="company-name">網頁前端工程師<br/><small>米洛科技有限公司</small></span>
 									<div class="company-con">git/gitLab版控、api串接、cookie紀錄、
-										<a target="_blank" href="https://www.canva.com/design/DAEo1gyZfSg/P3YB3W5XjVSNlhDzLILZfA/view?utm_content=DAEo1gyZfSg&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" title="查看案例">使用Vue.js + element UI製作新版後台</a>、
-										<a href="works.html#06" title="查看案例">javaScript 和 jq 網頁互動效果製作</a>、
-										<a href="works.html#10" title="查看案例">購物流程設計兼前端切版</a>、加價購功能規劃、<a target="_blank" href="works.html#09" title="查看案例">各式內頁版面設計及前端製作</a>、
+										<a target="_blank" onmouseover='mouseOver("red")' onmouseout='mouseOut()' href="https://www.canva.com/design/DAEo1gyZfSg/P3YB3W5XjVSNlhDzLILZfA/view?utm_content=DAEo1gyZfSg&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" title="查看案例">使用Vue.js + element UI製作新版後台</a>、
+										<a onmouseover='mouseOver("red")' onmouseout='mouseOut()' href="works.html#06" title="查看案例">javaScript 和 jq 網頁互動效果製作</a>、
+										<a onmouseover='mouseOver("red")' onmouseout='mouseOut()' href="works.html#10" title="查看案例">購物流程設計兼前端切版</a>、加價購功能規劃、<a onmouseover='mouseOver("red")' onmouseout='mouseOut()' target="_blank" href="works.html#09" title="查看案例">各式內頁版面設計及前端製作</a>、
 										各式功能模組前後台設計規劃與前端切版、官網維護、長期與後端遠距溝通經驗、前端外包溝通與驗收、每日回覆個部門問題及修正、與各部門溝通客製化功能評估及製作。
 									</div>
 								</li>
@@ -196,7 +196,7 @@
 									</div>
 									<span class="company-name">網頁設計/前端切版<br/><small>新視野多媒體行銷設計有限公司</small></span>
 									<div class="company-con">
-										<a href="works.html" title="查看案例">網頁前端 html/css 切版及 javaScript 和 jq 網頁效果製作、各頁面網頁視覺設計</a>、
+										<a onmouseover='mouseOver("red")' onmouseout='mouseOut()' href="works.html" title="查看案例">網頁前端 html/css 切版及 javaScript 和 jq 網頁效果製作、各頁面網頁視覺設計</a>、
 										網頁後續維護功能新增評估規劃及製作、官網維護、與前端外包溝通及驗收。
 									</div>
 								</li>
@@ -294,14 +294,34 @@
 				oDiv.innerHTML = show;
 			}
 		}
-		function mouseOver(){
+		//滑鼠游標
+		function mouseOver(any){
 			var oDiv = document.getElementById('cursor');
-			oDiv.classList.add("a_hover");
+			if(any==null){
+				oDiv.classList.add("a_hover");
+			}
+			if(any=='work'){
+				oDiv.classList.add("work_a_hover");
+			}
+			if(any=='yellow'){
+				oDiv.classList.add("work_a_hover_yellow");
+			}
+			if(any=='red'){
+				oDiv.classList.add("work_a_hover_red");
+			}
+			if(any=='green'){
+				oDiv.classList.add("work_a_hover_green");
+			}
 		}
 		function mouseOut(){
 			var oDiv = document.getElementById('cursor');
 			oDiv.classList.remove("a_hover");
+			oDiv.classList.remove("work_a_hover");
+			oDiv.classList.remove("work_a_hover_yellow");
+			oDiv.classList.remove("work_a_hover_red");
+			oDiv.classList.remove("work_a_hover_green");
 		}
+
 		/*about圖片切換*/
 		function vistPic(section,id){
 			let picDiv = document.getElementsByClassName('author_img')[0];
