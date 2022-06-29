@@ -221,10 +221,10 @@ body.scroll {
     z-index: 1;
 }
 .portfolio_content.active .portfolio a.about:before{
-    background: #F9BE00;
+    background: #68C3A3;
 }
 .portfolio_content.active .portfolio a.works:before{
-    background: #68C3A3;
+    background: #EC644B;
 }
 .portfolio_content.active .portfolio a.animated:before{
     animation: passing-bar-2 1s ease 0s 1 normal forwards;
@@ -303,10 +303,10 @@ body.scroll {
     transition: width 1s cubic-bezier(.19,1,.22,1);
 }
 .pc .portfolio .menu a.about:hover:before{
-    background: #F9BE00;
+    background: #68C3A3;
 }
 .pc .portfolio .menu a.works:hover:before{
-    background: #68C3A3;
+    background: #EC644B;
 }
 
 /*about*/
@@ -462,6 +462,7 @@ body.scroll {
 }
 
 
+
 .about-name{
     font-size: 42px;
     position: relative;
@@ -478,6 +479,10 @@ body.scroll {
 @media screen and (max-width: 512px) {
     .mobile .about-name{
         max-width: 260px;
+        margin: 0 auto;
+    }
+    .mobile .about-top{
+        margin-top: -50px;
     }
 }
 .about-name:after{
@@ -667,6 +672,16 @@ body.scroll {
     0% { background: rgba(255,255,255,.3); }
     50% { background: rgba(255,255,255,0); }
     100% { background: rgba(255,255,255,.3); }
+}
+@media screen and (max-width: 512px) {
+    .mobile .about-name{
+        max-width: 260px;
+    }
+    .author_img2{
+        position: relative;
+        top: -90px;
+        bottom: inherit;
+    }
 }
 
 

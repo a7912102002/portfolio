@@ -284,19 +284,17 @@ body.page_work_content {
     margin: 0 auto;
     padding: 0 10px 8vw;
 }
-.work_text{
+.work-text-box{
     position: relative;
-    color: #8d909c;
-    font-size: 23px;
 }
-.pc .work_text{
+.pc .work-text-box{
     /* padding-left: 120px; */
     z-index: 0;
     top: -8vh;
     width: calc(89% - 540px);
     padding-left: 11%;
 }
-.mobile .work_text{
+.mobile .work-text-box{
     /* text-align: center; */
     padding: 20px 30px;
     display: flex;
@@ -304,18 +302,17 @@ body.page_work_content {
     /* max-width: 540px;
     width: 100%; */
 }
-
-.work_text i{
+.work-text-box i{
     position: relative;
     font-size: 6vw;
     display: block;
     font-style: unset;
     color: #8d909c;
 }
-.pc .work_text i{
+.pc .work-text-box i{
     margin-bottom: 20px;
 }
-.work_text i::after{
+.work-text-box i::after{
     content: attr(tag);
     position: absolute;
     left: 0;
@@ -330,18 +327,14 @@ body.page_work_content {
      0% { background-size: 0 100%; }
      100% { background-size: 100% 100%; }
 }
-.owl-stage ._active .work_text i::after{
+.owl-stage ._active .work-text-box i::after{
     background-size: 100% 100%;
     animation: scan50 200ms linear;
 }
-
-
-
-
-/* .mobile .work_text i{
+/* .mobile .work-text-box i{
     width: 100px;
 } */
-.work_text i:before{
+.work-text-box i:before{
     content: ' ';
     width: 0;
     height: 1px;
@@ -351,18 +344,24 @@ body.page_work_content {
     top: 150px;
     transition: width .5s linear;
 }
-/* .work_text > div{
+/* .work-text-box > div{
     width: calc(100% - 100px);
 } */
-.mobile .work_text > div{
+.work-text-box .work-txt{
+    line-height: 1.8em;
+    font-size: 20px;
+}
+.mobile .work-text-box > div{
     padding-left: 30px;
 }
 .owl-stage{
     top: 50%;
 }
-.owl-stage ._active .work_text i:before{
+.owl-stage ._active .work-text-box i:before{
     width: calc(6vw + 133px);
 }
+
+
 .work_pic{
     max-width: 540px;
     width: 100%;
@@ -642,6 +641,7 @@ body.page_work_content .bg_left{
 .work_cont_txt .flex{
     width: 100%;
     font-size: 20px;
+    line-height: 1.8em;
     /* text-align: center; */
     justify-content: center;
 }
