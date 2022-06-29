@@ -555,7 +555,7 @@ body.scroll {
 }
 
 .skill-list{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
     padding-left: 90px;
 }
@@ -572,11 +572,11 @@ body.scroll {
 .skill-list li img{
     width: auto;
     height: 36px;
+    margin-bottom: 10px;
 }
 @media screen and (max-width: 512px) {
     .skill-list li img{
         height: 32px;
-        margin-bottom: 10px;
     }
 }
 .about-title{
