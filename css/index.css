@@ -336,6 +336,7 @@ body.scroll {
 }
 .mobile .header.active .in_logo{
     padding: 0 20px;
+    padding: 0 10px;
     transform: scale(.8);
 }
 .in_logo span{
@@ -550,14 +551,28 @@ body.scroll {
 
 .skill-list{
     margin-bottom: 30px;
+    position: relative;
+    padding-left: 90px;
+}
+.skill-list .skill-title{
+    margin-right: 40px;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
 }
 .skill-list li{
     margin-right: 16px;
     vertical-align: top;
 }
-.skill-list .skill-title{
-    margin-right: 40px;
-    font-size: 18px;
+.skill-list li img{
+    width: auto;
+    height: 36px;
+}
+@media screen and (max-width: 512px) {
+    .skill-list li img{
+        height: 32px;
+        margin-bottom: 10px;
+    }
 }
 .about-title{
     font-size: 20px;
@@ -633,7 +648,7 @@ body.scroll {
     background: url('../images/about/author2.png') no-repeat;
     position: absolute;
     left: -30px;
-    bottom: -15px;
+    bottom: -13%;
 }
 .author_img2:after{
     content: '';
