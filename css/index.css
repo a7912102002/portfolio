@@ -617,7 +617,7 @@ body.scroll {
     75% { clip-path: polygon( 0 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%); }
     100% { clip-path: polygon( 25% 0%, 75%   0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
 }
-.author_img:after{
+/* .author_img:after{
     content: '';
     position: absolute;
     top: 13%;
@@ -626,10 +626,7 @@ body.scroll {
     left: 13%;
     clip-path: polygon( 0% 75%, 0 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%);
     background: rgba(255,255,255,.3);
-    /* animation-name: author_img_;
-    animation-duration: 8s;
-    animation-iteration-count: infinite; */
-}
+} */
 .author_img2{
     max-width: 200px;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
