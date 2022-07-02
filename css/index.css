@@ -481,6 +481,7 @@ body.scroll {
     .mobile .about-name{
         max-width: 260px;
         /* margin: 0 auto; */
+        margin-top: 0;
         margin-left: auto;
         margin-right: auto;
     }
