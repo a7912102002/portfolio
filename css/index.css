@@ -543,7 +543,8 @@ body.scroll {
 .about-name span{
     margin-left: 40px;
     color: #888;
-    font-size: 28px;
+    font-size: 30px;
+    font-family: 'Permanent Marker', cursive;
 }
 .about-autobiography{
     font-size: 20px;
@@ -552,7 +553,15 @@ body.scroll {
     margin-bottom: 50px;
     color: #565656;
 }
-
+@media screen and (max-width: 512px) {
+    .mobile .about-name span{
+        margin-left: 25px;
+    }
+    .mobile .about-autobiography{
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
 
 
 .skill-box{
