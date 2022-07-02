@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	<link rel="manifest" href="images/site.webmanifest">
+	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<!-- <link rel="stylesheet" type="text/css" href="scripts/aos/aos.css"> -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css">
@@ -206,7 +211,7 @@
 			<!-- <button type="button" class="work_content_close"><span></span></button> -->
 			<div class="content_in" style="width: 100%;">
 
-				<div style="padding: 0 10.5vw; margin: 0 auto; box-sizing: content-box;">
+				<div class="banner-pic" style="padding: 0 10.5vw; margin: 0 auto; box-sizing: content-box;">
 					<div class="parallax">
 						<div class="img-loding">
 							<lord-icon class="img-icon"
@@ -266,7 +271,7 @@
 									</lord-icon>
 									<div class="loding-txt">lodong ...</div>
 								</div>
-								<img class="work_cont_img_phone" src="images/works/01/phone.png" alt="" style="width: 100%;">
+								<img class="work_cont_img_phone" src="" alt="" style="width: 100%;">
 							</div>
 						</div>
 					</div>
@@ -505,23 +510,26 @@
 					// $('#__lottie_element_6 stop').eq(0).attr('stop-color','rgb(172 224 249)');
 					// $('#__lottie_element_6 stop').eq(1).attr('stop-color','rgb(255 241 235)');
 
-						list_posX = $(this).offset().left;
-						list_posY = $(this).offset().top - $(document).scrollTop()
-						list_picW = $(this).outerWidth();
-						cont_posX = $('.parallax').offset().left - 8;
-						cont_posY = $('.parallax').offset().top - $(document).scrollTop()
-						cont_picW = $('.parallax').outerWidth();
-						list_scroll = $(window).scrollTop();
-
-					$('.parallax .picbgbox').css({'backgroundImage':"url(images/works/"+$(this).attr('tag')+"/pc_1.png)"})
-					$('.work_cont_img_phone').attr('src',"images/works/"+$(this).attr('tag')+"/phone.png")
+					list_posX = $(this).offset().left;
+					list_posY = $(this).offset().top - $(document).scrollTop()
+					list_picW = $(this).outerWidth();
+					cont_posX = $('.parallax').offset().left - 8;
+					cont_posY = $('.parallax').offset().top - $(document).scrollTop()
+					cont_picW = $('.parallax').outerWidth();
+					list_scroll = $(window).scrollTop();
 
 					$('.work-txt-id').html(work_cont_data[attr_tag*1-1].id)
 					$('.flex-div-1 .work_txt_title').after(work_cont_data[attr_tag*1-1].name)
 					$('.flex-div-2 .work_txt_title').after(work_cont_data[attr_tag*1-1].work)
-					$('.flex-btn a').attr('href',work_cont_data[attr_tag*1-1].url)
+					if(work_cont_data[attr_tag*1-1].url!='#'){
+						$('.flex-btn a').attr('href',work_cont_data[attr_tag*1-1].url)
+					}else{
+						$('.flex-btn a').hide()
+					}
 					
 					if($(this).attr('img_nu')>0){
+						$('.parallax .picbgbox').css({'backgroundImage':"url(images/works/"+$(this).attr('tag')+"/pc_1.png)"})
+						$('.work_cont_img_phone').attr('src',"images/works/"+$(this).attr('tag')+"/phone.png")
 						swiper_li="";
 						for(let li=1; li<=$(this).attr('img_nu'); li++){
 							swiper_li = swiper_li+'<div class="swiper-slide"><img src="images/works/'+$(this).attr('tag')+'/pc_'+li+'.png" alt="" style="width: 100%;"></div>'

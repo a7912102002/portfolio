@@ -773,22 +773,22 @@ body.page_work_content .bg_left{
 }
 @media only screen and (min-width: 1367px) {
   .parallax .picbgbox{
-      background-image:url(../images/works/01/pc_1.png);
+      /* background-image:url(../images/works/01/pc_1.png); */
   }
 }
 @media only screen and (max-width: 1366px) and (min-width: 993px) {
   .parallax .picbgbox{
-      background-image:url(../images/works/01/pc_1.png);
+      /* background-image:url(../images/works/01/pc_1.png); */
   }
 }
 @media only screen and (max-width: 992px) and (min-width: 768px) {
   .parallax .picbgbox{
-      background-image:url(../images/works/01/pc_1.png);
+      /* background-image:url(../images/works/01/pc_1.png); */
   }
 }
 @media only screen and (max-width: 767px) {
   .parallax .picbgbox{
-      background-image:url(../images/works/01/pc_1.png);
+      /* background-image:url(../images/works/01/pc_1.png); */
   }
 }
 /*內頁banner END*/
