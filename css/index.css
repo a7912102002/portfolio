@@ -816,16 +816,47 @@ body.scroll {
         display: block;
     }
 }
-.company-li .company-name{
-    font-size: 20px;
+.company-li .company-info{
     display: block;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 580px) {
+    .company-li .company-info{
+        display: block;
+    }
+}
+.company-li .company-logo{
+    margin-right: 15px;
+    max-width: 80px;
+}
+@media only screen and (max-width: 580px) {
+    .company-li .company-logo{
+        max-width: 100px;
+        margin-bottom: 8px;
+    }
+}
+.company-li .company-name{
+    font-size: 20px;
     font-weight: bold;
+    color: #333;
+}
+.company-li .company-name small{
+    color: rgb(63, 63, 63);
 }
 .company-con{
     font-size: 16px;
-    line-height: 30px;
+    line-height: 32px;
     font-weight: bold;
+}
+.company-con .br{
+    display: block;
+}
+@media only screen and (max-width: 580px) {
+    .company-con .br{
+        display: inline;
+    }
 }
 .company-con a{
     /* display: inline-block;
