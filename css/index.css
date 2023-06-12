@@ -602,6 +602,11 @@ body.scroll {
     margin-right: 16px;
     vertical-align: top;
 }
+.skill-list .skill-name{
+    font-weight: bold;
+    font-size: 21px;
+    color: #8c929d;
+}
 .skill-list li img{
     width: auto;
     height: 36px;
@@ -830,6 +835,11 @@ body.scroll {
 .company-li .company-logo{
     margin-right: 15px;
     max-width: 80px;
+    opacity: 0.5;
+    transition: all 150ms linear;
+}
+.company-li.active .company-logo{
+    opacity: 1;
 }
 @media only screen and (max-width: 580px) {
     .company-li .company-logo{
@@ -843,7 +853,7 @@ body.scroll {
     color: #333;
 }
 .company-li .company-name small{
-    color: rgb(63, 63, 63);
+    color: #8d909c;
 }
 .company-con{
     font-size: 16px;
