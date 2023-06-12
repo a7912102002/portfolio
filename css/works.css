@@ -813,8 +813,8 @@ body.page_work_content .bg_left{
     bottom: 6px;
     left: 8px;
     border-radius: 59px;
-    /* border-radius: 4.2vw; */
-    /* overflow: hidden; */
+    border-radius: 2.5rem;
+    overflow: hidden;
 }
 .phone_scroll{
     overflow-y: scroll;
